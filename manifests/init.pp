@@ -1,7 +1,9 @@
 class jenkins {
 
-include tomcat
+include tomcat::source
 include apache
+include java
+$tomcat_version = "6.0.18"
 
 apache::module {"proxy_ajp":
   ensure  => present,
