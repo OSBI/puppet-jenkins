@@ -16,7 +16,7 @@ apache::vhost {"ci.analytical-labs.com":
 tomcat::instance {"jenkins":
   ensure      => present,
   ajp_port    => "8009",
-  http_port   => "",
+  http_port   => "8080",
 }
 
 apache::proxypass {"jenkins":
