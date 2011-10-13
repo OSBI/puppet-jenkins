@@ -5,7 +5,7 @@ include apache
 include java
 $tomcat_version = "6.0.18"
 include git::client
-
+include subversion
 apache::module {"proxy_ajp":
   ensure  => present,
 }
