@@ -25,7 +25,7 @@ apache::proxypass {"jenkins":
   url      => "ajp://localhost:8009/jenkins",
 }
 
-file { "/var/www/ci.analytical-labs.com/htdocs/index.html"
+file { "/var/www/ci.analytical-labs.com/htdocs/index.html":
 	ensure => present,
 	source => "puppet://modules/jenkins/index.html",
 	require => "Apache::Vhost[ci.analyticl-labs.com]",
