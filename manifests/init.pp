@@ -27,7 +27,7 @@ apache::proxypass {"jenkins":
 
 file { "/var/www/ci.analytical-labs.com/htdocs/index.html":
 	ensure => present,
-	source => "puppet://modules/jenkins/index.html",
+	source => "puppet:///modules/jenkins/index.html",
 	require => Apache::Vhost["ci.analytical-labs.com"],
 }
 }
