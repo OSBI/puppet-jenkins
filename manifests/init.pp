@@ -36,3 +36,4 @@ file { "/home/tomcat":
 	mode => 700,
 	owner => tomcat,
 }
+}
