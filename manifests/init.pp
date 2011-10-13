@@ -21,9 +21,9 @@ tomcat::instance {"jenkins":
 
 apache::proxypass {"jenkins":
   ensure   => present,
-  location => "/jenkins",
+  location => "/",
   vhost    => "ci.analytical-labs.com",
-  url      => "ajp://localhost:8009/jenkins",
+  url      => "ajp://localhost:8009/",
 }
 
 file { "/var/www/ci.analytical-labs.com/htdocs/index.html":
