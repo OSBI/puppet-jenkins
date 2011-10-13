@@ -30,4 +30,9 @@ file { "/var/www/ci.analytical-labs.com/htdocs/index.html":
 	source => "puppet:///modules/jenkins/index.html",
 	require => Apache::Vhost["ci.analytical-labs.com"],
 }
+
+file { "/home/tomcat":
+	ensure => directory,
+	mode => 700,
+	owner => tomcat,
 }
