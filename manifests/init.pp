@@ -9,7 +9,11 @@ include subversion
 
 package { "unzip":
 	ensure => present,
-	}
+}
+
+package { "dh-make":
+	ensure => present,
+}
 apache::module {"proxy_ajp":
   ensure  => present,
 }
@@ -28,12 +32,6 @@ apache::proxypass {"jenkins":
   location => "/",
   vhost    => "ci.analytical-labs.com",
   url      => "ajp://localhost:8009/",
-}
-
-file { "/var/www/ci.analytical-labs.com/htdocs/index.html":
-	ensure => present,
-	source => "puppet:///modules/jenkins/index.html",
-	require => Apache::Vhost["ci.analytical-labs.com"],
 }
 
 file { "/home/tomcat":
