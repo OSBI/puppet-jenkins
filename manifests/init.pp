@@ -7,7 +7,7 @@ $tomcat_version = "6.0.18"
 include git::client
 include subversion
 
-package { "unzip"
+package { "unzip":
 	ensure => present,
 	}
 apache::module {"proxy_ajp":
