@@ -22,6 +22,10 @@ apache::vhost {"ci.analytical-labs.com":
   ensure => present,
 }
 
+apache::vhost {"ciarchive.analytical-labs.com":
+  ensure => present,
+}
+
 tomcat::instance {"jenkins":
   ensure      => present,
   ajp_port    => "8009",
@@ -47,8 +51,7 @@ file { "/home/tomcat/builds":
 	require => File["/home/tomcat"],
 }
 
-file { "/var/www/html/builds":
+file { "/var/www/ciarchive.analytical-labs.com/htdocs/builds":
     ensure => "/home/tomcat/builds"
 }
-
 }
