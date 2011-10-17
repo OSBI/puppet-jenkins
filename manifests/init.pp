@@ -47,8 +47,8 @@ file { "/home/tomcat/builds":
 	require => File["/home/tomcat"],
 }
 
-file { "/var/www/ci.analytical-labs.com/htdocs/builds":
-    ensure => "/var/www/html/builds"
+file { "/var/www/html/builds":
+    ensure => "/home/tomcat/builds"
 }
 
 }
