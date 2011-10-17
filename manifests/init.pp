@@ -39,4 +39,16 @@ file { "/home/tomcat":
 	mode => 700,
 	owner => tomcat,
 }
+
+file { "/home/tomcat/builds":
+	ensure => directory,
+	mode => 700,
+	owner => tomcat,
+	require => File["/home/tomcat"],
+}
+
+file { "/var/www/ci.analytical-labs.com/htdocs/builds":
+    ensure => "/home/tomcat/builds"
+}
+
 }
