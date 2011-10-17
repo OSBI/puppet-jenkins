@@ -48,7 +48,7 @@ file { "/home/tomcat/builds":
 }
 
 file { "/var/www/ci.analytical-labs.com/htdocs/builds":
-    ensure => "/srv/tomcat/jenkins/webapps/ROOT/builds"
+    ensure => "/var/www/html/builds"
 }
 
 }
