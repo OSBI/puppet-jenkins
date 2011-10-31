@@ -11,6 +11,9 @@ class jenkins {
     ensure => present,
   }
 
+  package { "devscripts":
+    ensure => present,
+  }
   package { "dh-make":
     ensure => present,
   }
