@@ -49,7 +49,7 @@ class jenkins {
 
   file { "/srv/builds":
     ensure => directory,
-    mode => 750,
+    mode => 760,
     owner => www-data,
     group => www-data
   }
