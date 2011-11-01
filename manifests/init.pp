@@ -50,7 +50,8 @@ class jenkins {
   file { "/srv/builds":
     ensure => directory,
     mode => 700,
-    owner => www-data:www-data,
+    owner => www-data,
+    group => www-data
   }
 
   file { "/var/www/ciarchive.analytical-labs.com/htdocs/builds":
