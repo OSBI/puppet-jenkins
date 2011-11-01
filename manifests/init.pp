@@ -47,14 +47,13 @@ class jenkins {
     owner => tomcat,
   }
 
-  file { "/home/tomcat/builds":
+  file { "/srv/builds":
     ensure => directory,
     mode => 700,
-    owner => tomcat,
-    require => File["/home/tomcat"],
+    owner => www-data:www-data,
   }
 
   file { "/var/www/ciarchive.analytical-labs.com/htdocs/builds":
-    ensure => "/home/tomcat/builds"
+    ensure => "/srv/builds"
   }
 }
