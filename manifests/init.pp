@@ -43,13 +43,13 @@ class jenkins {
 
   file { "/home/tomcat":
     ensure => directory,
-    mode => 750,
+    mode => 700,
     owner => tomcat,
   }
 
   file { "/srv/builds":
     ensure => directory,
-    mode => 700,
+    mode => 750,
     owner => www-data,
     group => www-data
   }
