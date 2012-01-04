@@ -77,4 +77,24 @@ class jenkins {
   file { "/var/www/ciarchive.analytical-labs.com/htdocs/builds":
     ensure => "/srv/builds"
   }
+  
+  
+  #Temp for adhoc
+  apache::vhost {"adhoc.analytical-labs.com":
+      ensure => present,
+    }
+  
+    tomcat::instance {"jenkins":
+      ensure      => present,
+      ajp_port    => "8015",
+    }
+  
+    apache::proxypass {"jenkins":
+      ensure   => present,
+      location => "/",
+      vhost    => "adhoc.analytical-labs.com",
+      url      => "ajp://localhost:8015/",
+    }
+  
+   
 }
