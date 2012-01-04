@@ -84,12 +84,12 @@ class jenkins {
       ensure => present,
     }
   
-    tomcat::instance {"jenkins":
+    tomcat::instance {"adhoc":
       ensure      => present,
       ajp_port    => "8015",
     }
   
-    apache::proxypass {"jenkins":
+    apache::proxypass {"adhoc":
       ensure   => present,
       location => "/",
       vhost    => "adhoc.analytical-labs.com",
