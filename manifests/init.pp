@@ -17,9 +17,7 @@ class jenkins {
 	include java 
 	$tomcat_version = "6.0.18"
 	include git::client 
-	include subversion 
-	
-	package {
+	include subversion package {
 		"unzip" :
 			ensure => present,
 	}
