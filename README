@@ -1,3 +1,5 @@
 puppet-jenkins
 
 This is the puppet-jenkins module.
+
+It will make sure a few tools are available and install a tomcat and apache setup.
