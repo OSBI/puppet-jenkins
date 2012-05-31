@@ -29,10 +29,6 @@ class jenkins {
 		"dh-make" :
 			ensure => present,
 	}
-	apache::module {
-		"proxy_ajp" :
-			ensure => present,
-	}
 	apache::vhost {
 		"ci.analytical-labs.com" :
 			ensure => present,
