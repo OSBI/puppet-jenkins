@@ -50,12 +50,6 @@ class jenkins {
 			url => "ajp://localhost:8009/",
 	}
 	file {
-		"/home/tomcat" :
-			ensure => directory,
-			mode => 700,
-			owner => tomcat,
-	}
-	file {
 		"/srv/builds" :
 			ensure => directory,
 			mode => 760,
